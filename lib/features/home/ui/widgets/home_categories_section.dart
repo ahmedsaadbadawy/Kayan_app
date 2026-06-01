@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:kayan_app/core/utils/app_router.dart';
 import 'package:kayan_app/features/home/ui/widgets/category_card.dart';
 
 class HomeCategoriesSection extends StatelessWidget {
-  const HomeCategoriesSection({
-    super.key,
-  });
+  const HomeCategoriesSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,9 @@ class HomeCategoriesSection extends StatelessWidget {
                 'Discover your dream home with our curated property listings.',
             image:
                 'https://kayan-eg.netlify.app/assets/hero_section_image-CN7sSwXX.webp',
-            onTap: () {},
+            onTap: () {
+              context.push(AppRouter.kPropertiesScreen);
+            },
           ),
           CategoryCard(
             title: 'Our Finishes',
