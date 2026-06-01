@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/layout/my_sliver_appbar.dart';
-import 'widgets/property_card.dart';
+import 'package:kayan_app/core/utils/widgets/rounded_image.dart';
 
-class PropertiesScreen extends StatelessWidget {
-  const PropertiesScreen({super.key});
+class FinishesScreen extends StatelessWidget {
+  const FinishesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return [
-            MySliverAppBar(),
-          ];
+          return [MySliverAppBar()];
         },
         body: SafeArea(
           top: false,
@@ -21,14 +19,13 @@ class PropertiesScreen extends StatelessWidget {
             padding: .symmetric(horizontal: 16.w),
             itemCount: 10,
             itemBuilder: (context, index) {
-              return PropertyCard(
-                imageUrl:
-                    'https://d28pk2nlhhgcne.cloudfront.net/assets/app/uploads/sites/3/2021/08/homebyme-homepage-gallery-9.jpg',
-                name: 'Property Name',
-                address: 'Property Address',
-                status: 'FOR SALE',
-                price: '6,000,000',
-                onTap: () {},
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16).h,
+                child: RoundedImage(
+                  url:
+                      'https://kayan-eg.netlify.app/assets/blog_image1-BBqTOcvD.webp',
+                  onTap: () {},
+                ),
               );
             },
           ),
