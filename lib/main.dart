@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'features/on_boarding/ui/on_boarding_screen.dart';
+import 'package:kayan_app/core/utils/app_router.dart';
 
 void main() {
   runApp(const KayanApp());
@@ -17,7 +16,8 @@ class KayanApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return MaterialApp(
+        return MaterialApp.router(
+          routerConfig: AppRouter.router,
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
@@ -29,7 +29,6 @@ class KayanApp extends StatelessWidget {
             scaffoldBackgroundColor: Colors.white,
             useMaterial3: true,
           ),
-          home: const OnBoardingScreen(),
         );
       },
     );
