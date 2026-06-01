@@ -29,7 +29,9 @@ class HomeCategoriesSection extends StatelessWidget {
                 'Every detail can be fully customized to match your personal taste.',
             image:
                 'https://kayan-eg.netlify.app/assets/blog_image3-Boe7FkkG.webp',
-            onTap: () {},
+            onTap: () {
+              context.push(AppRouter.kFinishesScreen);
+            },
           ),
           CategoryCard(
             title: 'Our Experts Tips',
@@ -37,7 +39,9 @@ class HomeCategoriesSection extends StatelessWidget {
                 'Transformed luxury living that effortlessly merges comfort with style.',
             image:
                 'https://kayan-eg.netlify.app/assets/blog_image2-Cl_xLFF3.webp',
-            onTap: () {},
+            onTap: () {
+              context.push(AppRouter.kBlogsScreen);
+            },
           ),
         ],
       ),
