@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kayan_app/core/utils/app_router.dart';
+import 'package:kayan_app/core/utils/helpers/spaces.dart';
 
 import 'widgets/on_boarding_page_view.dart';
 import 'widgets/onboarding_dot_indicator.dart';
@@ -22,7 +22,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          padding: myPadding,
           child: Column(
             children: [
               SkipButton(
