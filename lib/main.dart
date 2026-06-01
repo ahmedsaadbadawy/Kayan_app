@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'features/on_boarding/on_boarding_screen.dart';
+import 'features/on_boarding/ui/on_boarding_screen.dart';
 
 void main() {
   runApp(const KayanApp());
@@ -21,9 +21,9 @@ class KayanApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
             colorScheme: ColorScheme.fromSeed(
-              seedColor: const Color(0xFF100A55),
-              primary: const Color(0xFF100A55),
-              secondary: const Color(0xFF7065F0),
+              seedColor: Colors.deepPurple,
+              primary: Colors.deepPurple,
+              secondary: Colors.deepPurpleAccent,
               surface: Colors.white,
             ),
             scaffoldBackgroundColor: Colors.white,
