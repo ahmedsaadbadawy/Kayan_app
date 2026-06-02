@@ -28,7 +28,7 @@ class BlogCard extends StatelessWidget {
             Text(
               date,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w400,
                 color: Colors.grey[800],
               ),
