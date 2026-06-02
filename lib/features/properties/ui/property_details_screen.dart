@@ -5,7 +5,7 @@ import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/widgets/my_video_player.dart';
 
 import '../../../core/utils/widgets/property_details_grid.dart';
-import 'widgets/property_detailss_info.dart';
+import 'widgets/property_details_info.dart';
 
 class PropertyDetailsScreen extends StatelessWidget {
   const PropertyDetailsScreen({super.key});

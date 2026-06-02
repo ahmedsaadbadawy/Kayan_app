@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 import 'package:kayan_app/core/utils/themes/theme_text.dart';
+import 'package:kayan_app/core/utils/widgets/about_property.dart';
 
 class PropertyDetailsInfo extends StatelessWidget {
   const PropertyDetailsInfo({super.key});
@@ -49,19 +50,7 @@ class PropertyDetailsInfo extends StatelessWidget {
         ),
         // TO DO: contacts Row
         verticalSpace(6.h),
-        Row(
-          spacing: 6.w,
-          children: [
-            Container(width: 2.5.w, height: 18.w, color: kprimaryColor),
-            Text(
-              'About the property',
-              style: ThemeText.text20darkBlue(),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
-        ),
-        Text('description' * 60, style: ThemeText.text16gray()),
+        AboutProperty(description: 'description' * 60),
       ],
     );
   }
