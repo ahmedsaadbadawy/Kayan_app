@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-class Property {
+class PropertyModel {
   final String id;
   final DateTime createdAt;
   final String? title;
@@ -17,7 +17,7 @@ class Property {
   final String? parking;
   final String? contactPhone;
 
-  Property({
+  PropertyModel({
     required this.id,
     required this.createdAt,
     this.title,
@@ -35,8 +35,8 @@ class Property {
     this.contactPhone,
   });
 
-  factory Property.fromMap(Map<String, dynamic> map) {
-    return Property(
+  factory PropertyModel.fromMap(Map<String, dynamic> map) {
+    return PropertyModel(
       id: map['id'] as String,
       createdAt: DateTime.parse(map['created_at'] as String),
       title: map['title'] as String?,
@@ -76,6 +76,6 @@ class Property {
   }
 
   String toJson() => json.encode(toMap());
-  factory Property.fromJson(String source) =>
-      Property.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory PropertyModel.fromJson(String source) =>
+      PropertyModel.fromMap(json.decode(source) as Map<String, dynamic>);
 }
