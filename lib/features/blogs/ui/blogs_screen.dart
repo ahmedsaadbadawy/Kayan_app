@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kayan_app/core/layout/my_sliver_appbar.dart';
+import 'package:kayan_app/core/utils/app_router.dart';
+import 'package:kayan_app/features/blogs/data/blogs_data_list.dart';
 
 import 'widgets/blog_card.dart';
 
@@ -18,14 +21,18 @@ class BlogsScreen extends StatelessWidget {
           top: false,
           child: ListView.builder(
             padding: .symmetric(horizontal: 16.w),
-            itemCount: 5,
+            itemCount: blogsDataList.length,
             itemBuilder: (context, index) {
               return BlogCard(
-                imageUrl:
-                    'https://kayan-eg.netlify.app/assets/blog_image1-BBqTOcvD.webp',
-                date: 'Dec 28, 2024',
-                title: 'Blog Title',
-                onTap: () {},
+                imageUrl: blogsDataList[index].src,
+                date: blogsDataList[index].date,
+                title: blogsDataList[index].title,
+                onTap: () {
+                  context.push(
+                    AppRouter.kBlogDetailsScreen,
+                    extra: blogsDataList[index],
+                  );
+                },
               );
             },
           ),

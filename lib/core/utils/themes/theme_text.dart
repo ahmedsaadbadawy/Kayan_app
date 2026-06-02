@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 
 class ThemeText {
-
   static TextStyle text24darkBlue() {
     return TextStyle(
       fontWeight: FontWeight.bold,
@@ -11,6 +10,7 @@ class ThemeText {
       color: kdarkBlue,
     );
   }
+
   static TextStyle text20darkBlue() {
     return TextStyle(
       fontWeight: FontWeight.bold,
@@ -26,6 +26,7 @@ class ThemeText {
       color: ksecondaryColor,
     );
   }
+
   static TextStyle text18secondary() {
     return TextStyle(
       fontWeight: FontWeight.w500,
@@ -43,7 +44,11 @@ class ThemeText {
   }
 
   static TextStyle text16gray() {
-    return TextStyle(fontSize: 16.sp, color: Colors.grey[700]);
+    return TextStyle(
+      fontSize: 16.sp,
+      color: Colors.grey[700],
+      fontWeight: FontWeight.w500,
+    );
   }
 
   static TextStyle text16grayUnderlined() {
