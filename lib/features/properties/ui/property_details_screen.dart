@@ -4,6 +4,9 @@ import 'package:kayan_app/core/layout/my_sliver_appbar.dart';
 import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/widgets/my_video_player.dart';
 
+import 'widgets/property_details_grid.dart';
+import 'widgets/property_detailss_info.dart';
+
 class PropertyDetailsScreen extends StatelessWidget {
   const PropertyDetailsScreen({super.key});
 
@@ -20,19 +23,21 @@ class PropertyDetailsScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 6.h,
                   children: [
-                    verticalSpace(16.h),
                     MyVideoPlayer(
                       videoUrl: "https://files.catbox.moe/63y15e.mp4",
                     ),
-                    verticalSpace(16.h),
-                    Text(
-                      "Property Details",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    verticalSpace(10.h),
+                    PropertyDetailsGrid(
+                      type: 'Family Home',
+                      meters: 120,
+                      rooms: 3,
+                      parking: "Parking",
                     ),
+                    verticalSpace(10.h),
+                    PropertyDetailsInfo(),
+                    verticalSpace(10.h),
                   ],
                 ),
               ),
