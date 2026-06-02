@@ -6,8 +6,8 @@ import 'package:kayan_app/core/utils/themes/theme_text.dart';
 import 'package:kayan_app/core/utils/widgets/about_property.dart';
 
 class PropertyDetailsInfo extends StatelessWidget {
-  const PropertyDetailsInfo({super.key});
-
+  const PropertyDetailsInfo({super.key, required this.price, required this.name, required this.location, required this.description});
+  final String price,name,location, description;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -15,7 +15,7 @@ class PropertyDetailsInfo extends StatelessWidget {
       crossAxisAlignment: .start,
       children: [
         Text(
-          'Property Name',
+          name,
           style: ThemeText.text24darkBlue(),
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
@@ -29,7 +29,7 @@ class PropertyDetailsInfo extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
             ),
             Text(
-              '6,000,000',
+              price,
               style: ThemeText.text20secondary(),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -41,7 +41,7 @@ class PropertyDetailsInfo extends StatelessWidget {
           children: [
             Icon(Icons.location_on_outlined, color: ksecondaryColor),
             Text(
-              'location',
+              location,
               style: ThemeText.text16grayUnderlined(),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
@@ -50,7 +50,7 @@ class PropertyDetailsInfo extends StatelessWidget {
         ),
         // TO DO: contacts Row
         verticalSpace(6.h),
-        AboutProperty(description: 'description' * 60),
+        AboutProperty(description: description),
       ],
     );
   }

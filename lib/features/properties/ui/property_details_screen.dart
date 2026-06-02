@@ -36,7 +36,12 @@ class PropertyDetailsScreen extends StatelessWidget {
                       parking: "Parking",
                     ),
                     verticalSpace(10.h),
-                    PropertyDetailsInfo(),
+                    PropertyDetailsInfo(
+                      price: '6,000,000',
+                      name: 'Property Name',
+                      location: 'location',
+                      description: 'description' * 60,
+                    ),
                     verticalSpace(10.h),
                   ],
                 ),
