@@ -21,10 +21,12 @@ class FinishesScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 16).h,
-                child: RoundedImage(
-                  url:
-                      'https://kayan-eg.netlify.app/assets/blog_image1-BBqTOcvD.webp',
+                child: GestureDetector(
                   onTap: () {},
+                  child: RoundedImage(
+                    url:
+                        'https://kayan-eg.netlify.app/assets/blog_image1-BBqTOcvD.webp',
+                  ),
                 ),
               );
             },

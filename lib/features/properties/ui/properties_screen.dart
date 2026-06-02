@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kayan_app/core/layout/my_sliver_appbar.dart';
+import 'package:kayan_app/core/utils/app_router.dart';
 import 'widgets/property_card.dart';
 
 class PropertiesScreen extends StatelessWidget {
@@ -28,7 +30,9 @@ class PropertiesScreen extends StatelessWidget {
                 address: 'Property Address',
                 status: 'FOR SALE',
                 price: '6,000,000',
-                onTap: () {},
+                onTap: () {
+                  context.push(AppRouter.kPropertyDetailsScreen);
+                },
               );
             },
           ),
