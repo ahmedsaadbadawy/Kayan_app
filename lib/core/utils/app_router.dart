@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:kayan_app/features/blogs/ui/blogs_screen.dart';
+import 'package:kayan_app/features/finishes/ui/finishes_details_screen.dart';
 import 'package:kayan_app/features/finishes/ui/finishes_screen.dart';
 import 'package:kayan_app/features/home/ui/home_screen.dart';
 import 'package:kayan_app/features/on_boarding/ui/on_boarding_screen.dart';
@@ -13,6 +14,7 @@ abstract class AppRouter {
   static const kFinishesScreen = '/FinishesScreen';
   static const kBlogsScreen = '/BlogScreen';
   static const kPropertyDetailsScreen = '/PropertyDetailsScreen';
+  static const kFinishesDetailsScreen = '/FinishesDetailsScreen';
   static final router = GoRouter(
     initialLocation: '/',
     routes: <GoRoute>[
@@ -36,6 +38,10 @@ abstract class AppRouter {
       GoRoute(
         path: kPropertyDetailsScreen,
         builder: (context, state) => const PropertyDetailsScreen(),
+      ),
+      GoRoute(
+        path: kFinishesDetailsScreen,
+        builder: (context, state) => const FinishesDetailsScreen(),
       ),
     ],
   );
