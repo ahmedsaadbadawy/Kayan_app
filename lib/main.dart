@@ -33,10 +33,12 @@ class KayanApp extends StatelessWidget {
         builder: (context, child) {
           return BlocBuilder<LocaleCubit, LocaleState>(
             builder: (context, state) {
+              final isArabic = state.locale.languageCode == 'ar';
               return MaterialApp.router(
                 routerConfig: AppRouter.router,
                 debugShowCheckedModeBanner: false,
                 theme: ThemeData(
+                  fontFamily: isArabic ? 'Cairo' : null,
                   colorScheme: ColorScheme.fromSeed(
                     seedColor: Colors.deepPurple,
                     primary: Colors.deepPurple,
