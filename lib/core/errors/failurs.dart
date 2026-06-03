@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 abstract class Failure {
   final String message;
@@ -9,6 +10,18 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.message);
 
+  factory ServerFailure.fromSupabase(dynamic e) {
+    if (e is PostgrestException) {
+      return ServerFailure(e.message);
+    } else if (e is AuthException) {
+      return ServerFailure(e.message);
+    } else if (e.toString().contains('SocketException') ||
+        e.toString().contains('Network')) {
+      return ServerFailure('No Internet Connection');
+    } else {
+      return ServerFailure('Opps There was an Error, Please try again');
+    }
+  }
   factory ServerFailure.fromDioException(DioException e) {
     // return ServerFailure(message);
     switch (e.type) {
