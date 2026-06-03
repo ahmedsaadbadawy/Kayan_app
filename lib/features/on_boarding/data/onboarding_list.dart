@@ -1,5 +1,4 @@
 import 'onbourding_model.dart';
-
 List<OnBourdingModel> onboardingList = [
   OnBourdingModel(
     image: 'assets/images/Rent.png',

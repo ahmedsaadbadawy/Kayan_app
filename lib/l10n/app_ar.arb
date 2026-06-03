@@ -1,0 +1,4 @@
+{
+  "helloWorld": "أهلاً بك!",
+  "welcomeMessage": "مرحباً بك في تطبيقنا، {username}"
+}
