@@ -3,6 +3,9 @@ import 'package:go_router/go_router.dart';
 import 'package:kayan_app/features/blogs/data/blog_model.dart';
 import 'package:kayan_app/features/blogs/ui/blog_details_screen.dart';
 import 'package:kayan_app/features/blogs/ui/blogs_screen.dart';
+import 'package:kayan_app/features/finishes/data/Repos/finishes_repo_impl.dart';
+import 'package:kayan_app/features/finishes/data/models/finishes_model.dart';
+import 'package:kayan_app/features/finishes/manager/finishes_cubit/finishes_cubit.dart';
 import 'package:kayan_app/features/finishes/ui/finishes_details_screen.dart';
 import 'package:kayan_app/features/finishes/ui/finishes_screen.dart';
 import 'package:kayan_app/features/home/ui/home_screen.dart';
@@ -33,13 +36,19 @@ abstract class AppRouter {
       GoRoute(
         path: kPropertiesScreen,
         builder: (context, state) => BlocProvider(
-          create: (context) => PropertiesCubit(propertiesRepo: PropertiesRepoImpl())..fetchProperties(),
+          create: (context) =>
+              PropertiesCubit(propertiesRepo: PropertiesRepoImpl())
+                ..fetchProperties(),
           child: const PropertiesScreen(),
         ),
       ),
       GoRoute(
         path: kFinishesScreen,
-        builder: (context, state) => const FinishesScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (context) =>
+              FinishesCubit(finishesRepo: FinishesRepoImpl())..fetchFinishes(),
+          child: const FinishesScreen(),
+        ),
       ),
       GoRoute(
         path: kBlogsScreen,
@@ -47,13 +56,13 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kPropertyDetailsScreen,
-        builder: (context, state) => PropertyDetailsScreen(
-          propertyModel: state.extra as PropertyModel,
-        ),
+        builder: (context, state) =>
+            PropertyDetailsScreen(propertyModel: state.extra as PropertyModel),
       ),
       GoRoute(
         path: kFinishesDetailsScreen,
-        builder: (context, state) => const FinishesDetailsScreen(),
+        builder: (context, state) =>
+            FinishesDetailsScreen(finishesModel: state.extra as FinishesModel),
       ),
       GoRoute(
         path: kBlogDetailsScreen,
