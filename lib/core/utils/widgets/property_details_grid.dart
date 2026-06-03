@@ -10,7 +10,7 @@ class PropertyDetailsGrid extends StatelessWidget {
     required this.type,
     required this.meters,
     required this.rooms,
-    this.parking = 'Parking',
+    required this.parking,
   });
   final String type, parking;
   final int meters, rooms;
@@ -51,7 +51,7 @@ class PropertyDetailsGrid extends StatelessWidget {
           PropertyDetailsGridCard(
             icon: Icons.drive_eta_outlined,
             type: 'Listed properties',
-            value: parking,
+            value: parking.isEmpty ? 'Parking' : parking,
           ),
         ],
       ),

@@ -26,7 +26,7 @@ class PropertiesListView extends StatelessWidget {
         }
 
         List<PropertyModel> propertiesList = [];
-        
+
         if (state is PropertiesSuccess) {
           propertiesList = state.properties;
         }
@@ -46,7 +46,10 @@ class PropertiesListView extends StatelessWidget {
               status: propertiesList[index].badgeText!,
               price: propertiesList[index].price.toString(),
               onTap: () {
-                context.push(AppRouter.kPropertyDetailsScreen);
+                context.push(
+                  AppRouter.kPropertyDetailsScreen,
+                  extra: propertiesList[index],
+                );
               },
             );
           },

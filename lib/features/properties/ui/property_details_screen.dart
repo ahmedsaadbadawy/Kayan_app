@@ -5,11 +5,12 @@ import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/widgets/my_video_player.dart';
 
 import '../../../core/utils/widgets/property_details_grid.dart';
+import '../data/models/property_model.dart';
 import 'widgets/property_details_info.dart';
 
 class PropertyDetailsScreen extends StatelessWidget {
-  const PropertyDetailsScreen({super.key});
-
+  const PropertyDetailsScreen({super.key, required this.propertyModel});
+  final PropertyModel propertyModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,22 +26,20 @@ class PropertyDetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 6.h,
                   children: [
-                    MyVideoPlayer(
-                      videoUrl: "https://files.catbox.moe/63y15e.mp4",
-                    ),
+                    MyVideoPlayer(videoUrl: propertyModel.videoUrl!),
                     verticalSpace(10.h),
                     PropertyDetailsGrid(
-                      type: 'Family Home',
-                      meters: 120,
-                      rooms: 3,
-                      parking: "Parking",
+                      type: propertyModel.propertyType!,
+                      meters: propertyModel.squareMeters!,
+                      rooms: propertyModel.rooms!,
+                      parking: propertyModel.parking!,
                     ),
                     verticalSpace(10.h),
                     PropertyDetailsInfo(
-                      price: '6,000,000',
-                      name: 'Property Name',
-                      location: 'location',
-                      description: 'description' * 60,
+                      price: propertyModel.price!,
+                      name: propertyModel.title!,
+                      location: propertyModel.location!,
+                      description: propertyModel.description!,
                     ),
                     verticalSpace(10.h),
                   ],
