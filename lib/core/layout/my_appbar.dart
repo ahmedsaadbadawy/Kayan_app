@@ -13,10 +13,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       titleSpacing: 1.w,
       title: Row(
         children: [
-          Image.network(
-            'https://kayan-eg.netlify.app/assets/logo_image-BCHM58D5.webp',
-            width: 60.w,
-          ),
+          Image.asset('assets/images/logo.png', width: 60.w),
           Spacer(),
           IconButton(
             onPressed: () {},

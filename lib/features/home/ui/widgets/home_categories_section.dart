@@ -17,8 +17,7 @@ class HomeCategoriesSection extends StatelessWidget {
             title: 'Find Your Dream Home',
             subTitle:
                 'Discover your dream home with our curated property listings.',
-            image:
-                'https://kayan-eg.netlify.app/assets/hero_section_image-CN7sSwXX.webp',
+            image: 'assets/images/hero.png',
             onTap: () {
               context.push(AppRouter.kPropertiesScreen);
             },
@@ -27,8 +26,7 @@ class HomeCategoriesSection extends StatelessWidget {
             title: 'Our Finishes',
             subTitle:
                 'Every detail can be fully customized to match your personal taste.',
-            image:
-                'https://kayan-eg.netlify.app/assets/blog_image3-Boe7FkkG.webp',
+            image: 'assets/images/blog3.png',
             onTap: () {
               context.push(AppRouter.kFinishesScreen);
             },
@@ -37,8 +35,7 @@ class HomeCategoriesSection extends StatelessWidget {
             title: 'Our Experts Tips',
             subTitle:
                 'Transformed luxury living that effortlessly merges comfort with style.',
-            image:
-                'https://kayan-eg.netlify.app/assets/blog_image2-Cl_xLFF3.webp',
+            image: 'assets/images/blog2.png',
             onTap: () {
               context.push(AppRouter.kBlogsScreen);
             },

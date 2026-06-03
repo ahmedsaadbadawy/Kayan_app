@@ -4,22 +4,16 @@ import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 import 'package:kayan_app/core/utils/widgets/rounded_image.dart';
 
+import '../../data/models/property_model.dart';
+
 class PropertyCard extends StatelessWidget {
-  const PropertyCard({
-    super.key,
-    required this.imageUrl,
-    required this.name,
-    required this.address,
-    required this.status,
-    required this.price,
-    this.onTap,
-  });
-  final String name, address, status, price, imageUrl;
+  const PropertyCard({super.key, this.onTap, required this.propertyModel});
+  final PropertyModel propertyModel;
   final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    final statusColor = status.toLowerCase() == 'for sale'
+    final statusColor = propertyModel.badgeText!.toLowerCase() == 'for sale'
         ? Colors.green
         : const Color(0xff155dfc);
 
@@ -30,10 +24,10 @@ class PropertyCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RoundedImage(url: imageUrl),
+            RoundedImage(url: propertyModel.imageUrl!),
             verticalSpace(6.h),
             Text(
-              name,
+              propertyModel.title!,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 20.sp,
@@ -44,7 +38,7 @@ class PropertyCard extends StatelessWidget {
             ),
             verticalSpace(6.h),
             Text(
-              address,
+              propertyModel.location!,
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 14.sp,
@@ -57,7 +51,7 @@ class PropertyCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'EGP$price',
+                  'EGP${propertyModel.price!}',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.sp,
@@ -76,7 +70,7 @@ class PropertyCard extends StatelessWidget {
                       horizontal: 8.0,
                     ).r,
                     child: Text(
-                      status,
+                      propertyModel.badgeText!,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14.sp,

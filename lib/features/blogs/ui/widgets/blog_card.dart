@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
-import 'package:kayan_app/core/utils/widgets/rounded_image.dart';
+import 'package:kayan_app/core/utils/widgets/local_rounded_image.dart';
 
 class BlogCard extends StatelessWidget {
   const BlogCard({
@@ -23,7 +23,7 @@ class BlogCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            RoundedImage(url: imageUrl),
+            LocalRoundedImage(url: imageUrl),
             verticalSpace(8.h),
             Text(
               date,

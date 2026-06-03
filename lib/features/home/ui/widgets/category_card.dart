@@ -19,7 +19,7 @@ class CategoryCard extends StatelessWidget {
         margin: const EdgeInsets.only(top: 12).h,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(image),
+            image: Image.asset(image).image,
             fit: BoxFit.cover,
             // colorFilter: ColorFilter.mode(
             //   Colors.black.withValues(alpha: 0.05),

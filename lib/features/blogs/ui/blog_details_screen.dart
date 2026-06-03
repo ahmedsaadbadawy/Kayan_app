@@ -40,7 +40,7 @@ class BlogDetailsScreen extends StatelessWidget {
                     verticalSpace(6.h),
                     ClipRRect(
                       borderRadius: .circular(16.r),
-                      child: Image.network(
+                      child: Image.asset(
                         blogModel.src,
                         fit: BoxFit.cover,
                         height: 300.h,

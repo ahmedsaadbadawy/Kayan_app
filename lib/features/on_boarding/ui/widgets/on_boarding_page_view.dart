@@ -19,7 +19,10 @@ class OnBoardingPageView extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           spacing: 2.h,
           children: [
-            Image.network(onboardingList[index].image, height: 120.h),
+            Image.asset(
+              onboardingList[index].image,
+              height: 120.h,
+            ),
             Text(
               onboardingList[index].title,
               style: TextStyle(

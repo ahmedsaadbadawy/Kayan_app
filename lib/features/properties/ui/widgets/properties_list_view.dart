@@ -40,11 +40,7 @@ class PropertiesListView extends StatelessWidget {
           itemCount: propertiesList.length,
           itemBuilder: (context, index) {
             return PropertyCard(
-              imageUrl: propertiesList[index].imageUrl!,
-              name: propertiesList[index].title!,
-              address: propertiesList[index].location!,
-              status: propertiesList[index].badgeText!,
-              price: propertiesList[index].price.toString(),
+              propertyModel: propertiesList[index],
               onTap: () {
                 context.push(
                   AppRouter.kPropertyDetailsScreen,

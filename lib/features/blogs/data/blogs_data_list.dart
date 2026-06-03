@@ -5,7 +5,7 @@ List<BlogModel> blogsDataList = [
     id: 1,
     title: "The Ultimate Guide to Finding Your Ideal Neighborhood",
     date: 'Dec 28, 2024',
-    src: 'https://kayan-eg.netlify.app/assets/blog_image1-BBqTOcvD.webp',
+    src: 'assets/images/blog1.png',
     subTitle: 'Location & Amenities Analysis',
     paragraphs: [
       "Finding the perfect home starts long before you look at floor plans; it begins with evaluating the surrounding community, school districts, and daily commute times.",
@@ -17,7 +17,7 @@ List<BlogModel> blogsDataList = [
     id: 2,
     title: "The Art of Hosting: Preparing Your Home for Sale",
     date: 'Dec 27, 2025',
-    src: 'https://kayan-eg.netlify.app/assets/blog_image2-Cl_xLFF3.webp',
+    src: 'assets/images/blog2.png',
     subTitle:
         'Location & Amenities AnalysisFirst Impressions & Open House Strategy',
     paragraphs: [
@@ -30,7 +30,7 @@ List<BlogModel> blogsDataList = [
     id: 3,
     title: "Interior Design Trends: Creating Timeless Spaces",
     date: 'Jan 1, 2025',
-    src: 'https://kayan-eg.netlify.app/assets/blog_image3-Boe7FkkG.webp',
+    src: 'assets/images/blog3.png',
     subTitle: 'Balancing Aesthetics and Longevity',
     paragraphs: [
       "While keeping up with modern design trends is exciting, true luxury lies in selecting foundational elements that stand the test of time rather than quickly fading out of style.",
@@ -42,7 +42,7 @@ List<BlogModel> blogsDataList = [
     id: 4,
     title: "Budget-Friendly Upgrades: Boosting Home Value",
     date: 'Jan 13, 2025',
-    src: 'https://kayan-eg.netlify.app/assets/blog_image4-C3pXw4v4.webp',
+    src: 'assets/images/blog4.png',
     subTitle: 'High-ROI Remodeling Tactics',
     paragraphs: [
       "You don't always need a massive structural renovation budget to significantly increase your home’s market value and draw buyers in.",
@@ -54,7 +54,7 @@ List<BlogModel> blogsDataList = [
     id: 5,
     title: "10 Essential Tips to Stage Your Home Like a Pro",
     date: 'March 15, 2025',
-    src: 'https://kayan-eg.netlify.app/assets/blog_image5-Bvo9apkP.webp',
+    src: 'assets/images/blog5.png',
     subTitle: 'Spatial Layout & Furniture Arrangement',
     paragraphs: [
       "Professional home staging isn't just about decorating; it's a strategic psychological tool used to optimize the perception of square footage and spatial flow.",
