@@ -1,3 +1,4 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kayan_app/features/blogs/data/blog_model.dart';
 import 'package:kayan_app/features/blogs/ui/blog_details_screen.dart';
@@ -6,6 +7,9 @@ import 'package:kayan_app/features/finishes/ui/finishes_details_screen.dart';
 import 'package:kayan_app/features/finishes/ui/finishes_screen.dart';
 import 'package:kayan_app/features/home/ui/home_screen.dart';
 import 'package:kayan_app/features/on_boarding/ui/on_boarding_screen.dart';
+import 'package:kayan_app/features/properties/data/models/property_model.dart';
+import 'package:kayan_app/features/properties/data/repos/properties_repo_impl.dart';
+import 'package:kayan_app/features/properties/manager/properties_cubit/properties_cubit.dart';
 import 'package:kayan_app/features/properties/ui/properties_screen.dart';
 import 'package:kayan_app/features/properties/ui/property_details_screen.dart';
 
@@ -28,7 +32,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kPropertiesScreen,
-        builder: (context, state) => const PropertiesScreen(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => PropertiesCubit(propertiesRepo: PropertiesRepoImpl())..fetchProperties(),
+          child: const PropertiesScreen(),
+        ),
       ),
       GoRoute(
         path: kFinishesScreen,
@@ -40,7 +47,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kPropertyDetailsScreen,
-        builder: (context, state) => const PropertyDetailsScreen(),
+        builder: (context, state) => PropertyDetailsScreen(
+          propertyModel: state.extra as PropertyModel,
+        ),
       ),
       GoRoute(
         path: kFinishesDetailsScreen,
@@ -49,7 +58,7 @@ abstract class AppRouter {
       GoRoute(
         path: kBlogDetailsScreen,
         builder: (context, state) =>
-             BlogDetailsScreen(blogModel: state.extra as BlogModel),
+            BlogDetailsScreen(blogModel: state.extra as BlogModel),
       ),
     ],
   );
