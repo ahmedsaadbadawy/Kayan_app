@@ -4,12 +4,20 @@ import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 import 'package:kayan_app/core/utils/themes/theme_text.dart';
 import 'package:kayan_app/core/utils/widgets/about_property.dart';
+import 'package:kayan_app/l10n/app_localizations.dart';
 
 class PropertyDetailsInfo extends StatelessWidget {
-  const PropertyDetailsInfo({super.key, required this.price, required this.name, required this.location, required this.description});
-  final String price,name,location, description;
+  const PropertyDetailsInfo({
+    super.key,
+    required this.price,
+    required this.name,
+    required this.location,
+    required this.description,
+  });
+  final String price, name, location, description;
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Column(
       spacing: 6.h,
       crossAxisAlignment: .start,
@@ -23,7 +31,7 @@ class PropertyDetailsInfo extends StatelessWidget {
         Row(
           children: [
             Text(
-              'EGP ',
+              '${t.egp} ',
               style: ThemeText.text18secondary(),
               maxLines: 1,
               overflow: TextOverflow.ellipsis,

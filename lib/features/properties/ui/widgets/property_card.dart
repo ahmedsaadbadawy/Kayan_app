@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 import 'package:kayan_app/core/utils/widgets/rounded_image.dart';
+import 'package:kayan_app/l10n/app_localizations.dart';
 
 import '../../data/models/property_model.dart';
 
@@ -13,9 +14,11 @@ class PropertyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final statusColor = propertyModel.badgeText!.toLowerCase() == 'for sale'
-        ? Colors.green
-        : const Color(0xff155dfc);
+    final t = AppLocalizations.of(context)!;
+
+    final isForSale = propertyModel.badgeText!.toLowerCase() == 'for sale';
+    final statusColor = isForSale ? Colors.green : const Color(0xff155dfc);
+    final displayStatus = isForSale ? t.forSale : t.forRent;
 
     return GestureDetector(
       onTap: onTap,
@@ -51,7 +54,7 @@ class PropertyCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'EGP${propertyModel.price!}',
+                  '${t.egp}${propertyModel.price!}',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20.sp,
@@ -66,11 +69,11 @@ class PropertyCard extends StatelessWidget {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 4.0,
-                      horizontal: 8.0,
+                      vertical: 5.0,
+                      horizontal: 10.0,
                     ).r,
                     child: Text(
-                      propertyModel.badgeText!,
+                      displayStatus,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 14.sp,

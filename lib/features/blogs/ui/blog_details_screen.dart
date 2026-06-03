@@ -23,12 +23,14 @@ class BlogDetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 16.h,
                   children: [
-                    Text(
-                      blogModel.title,
-                      style: ThemeText.text24darkBlue().copyWith(
-                        fontWeight: .w500,
+                    Center(
+                      child: Text(
+                        blogModel.title,
+                        style: ThemeText.text24darkBlue().copyWith(
+                          fontWeight: .w500,
+                        ),
+                        textAlign: .center,
                       ),
-                      textAlign: .center,
                     ),
                     Center(
                       child: Text(
@@ -38,12 +40,14 @@ class BlogDetailsScreen extends StatelessWidget {
                       ),
                     ),
                     verticalSpace(6.h),
-                    ClipRRect(
-                      borderRadius: .circular(16.r),
-                      child: Image.asset(
-                        blogModel.src,
-                        fit: BoxFit.cover,
-                        height: 300.h,
+                    Center(
+                      child: ClipRRect(
+                        borderRadius: .circular(16.r),
+                        child: Image.asset(
+                          blogModel.src,
+                          fit: BoxFit.cover,
+                          height: 300.h,
+                        ),
                       ),
                     ),
                     verticalSpace(6.h),
