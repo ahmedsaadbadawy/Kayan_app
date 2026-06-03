@@ -23,10 +23,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               context.read<LocaleCubit>().toggleLocale();
             },
             child: Text(
-              isRtl ? 'En' : 'العربية',
+              isRtl ? 'EN' : 'العربية',
               style: TextStyle(
                 color: kprimaryColor,
-                fontSize: 16.sp,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
