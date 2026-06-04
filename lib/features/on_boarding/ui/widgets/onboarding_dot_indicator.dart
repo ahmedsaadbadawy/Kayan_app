@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 
-import '../../data/onboarding_list.dart';
-
 class OnBoardingDotIndicator extends StatelessWidget {
   final int currentPage;
   const OnBoardingDotIndicator({super.key, required this.currentPage});
@@ -15,7 +13,7 @@ class OnBoardingDotIndicator extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: List.generate(
-          onboardingList.length,
+          3,
           (index) => AnimatedContainer(
             duration: const Duration(milliseconds: 300),
             margin: const EdgeInsets.all(7).r,

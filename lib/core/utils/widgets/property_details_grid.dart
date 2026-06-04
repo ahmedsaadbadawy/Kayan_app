@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
+import 'package:kayan_app/l10n/app_localizations.dart';
 
 import 'property_details_grid_card.dart';
 
@@ -17,6 +18,8 @@ class PropertyDetailsGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
+
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14.r),
@@ -27,7 +30,6 @@ class PropertyDetailsGrid extends StatelessWidget {
         shrinkWrap: true,
         padding: .zero,
         physics: const NeverScrollableScrollPhysics(),
-
         crossAxisCount: 1,
         mainAxisSpacing: 16,
         crossAxisSpacing: 14,
@@ -35,23 +37,23 @@ class PropertyDetailsGrid extends StatelessWidget {
         children: [
           PropertyDetailsGridCard(
             icon: Icons.apartment,
-            type: 'Property Type',
+            type: t.propertyType,
             value: type,
           ),
           PropertyDetailsGridCard(
             icon: Icons.straighten_outlined,
-            type: 'Spacious life',
-            value: '$meters Meter²',
+            type: t.spaciousLife,
+            value: t.meterSquare(meters),
           ),
           PropertyDetailsGridCard(
             icon: Icons.bed_rounded,
-            type: 'No of Rooms',
-            value: '$rooms Rooms',
+            type: t.noOfRooms,
+            value: t.roomsCount(rooms),
           ),
           PropertyDetailsGridCard(
             icon: Icons.drive_eta_outlined,
-            type: 'Listed properties',
-            value: parking.isEmpty ? 'Parking' : parking,
+            type: t.listedProperties,
+            value: parking.isEmpty ? t.parkingText : parking,
           ),
         ],
       ),

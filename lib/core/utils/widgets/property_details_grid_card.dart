@@ -32,7 +32,7 @@ class PropertyDetailsGridCard extends StatelessWidget {
           ),
           Text(
             value,
-            style: ThemeText.text24darkBlue().copyWith(fontWeight: .w500),
+            style: ThemeText.text24darkBlue().copyWith(fontWeight: .w600),
           ),
         ],
       ),

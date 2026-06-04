@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:kayan_app/manager/locale_cubit/locale_cubit.dart';
 
 import '../utils/helpers/spaces.dart';
 import '../utils/themes/theme_color.dart';
@@ -9,18 +11,24 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isRtl = Directionality.of(context) == TextDirection.rtl;
     return AppBar(
       titleSpacing: 1.w,
       title: Row(
         children: [
           Image.asset('assets/images/logo.png', width: 60.w),
           Spacer(),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.language_rounded,
-              color: kprimaryColor,
-              size: 28.w,
+          TextButton(
+            onPressed: () {
+              context.read<LocaleCubit>().toggleLocale();
+            },
+            child: Text(
+              isRtl ? 'EN' : 'العربية',
+              style: TextStyle(
+                color: kprimaryColor,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           horizontalSpace(8.w),
