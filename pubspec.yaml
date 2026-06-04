@@ -45,12 +45,32 @@ dependencies:
   shared_preferences: ^2.5.5
   supabase_flutter: ^2.12.4
   video_player: ^2.11.1
+  flutter_native_splash: ^2.4.8
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.4
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: "assets/images/app_icon.png"
+  # flutter pub run flutter_launcher_icons
 
+flutter_native_splash:
+  color: "#FFFFFF"
+  image: "assets/images/app_icon.png"
+  color_dark: "#FFFFFF"
+  image_dark: "assets/images/app_icon.png"
+  android_12:
+    image: "assets/images/app_icon.png"
+    color: "#FFFFFF"
+  fullscreen: true
+  # dart run flutter_native_splash:create 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.

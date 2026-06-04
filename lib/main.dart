@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/utils/app_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -11,7 +12,11 @@ import 'l10n/app_localizations.dart';
 import 'manager/locale_cubit/locale_cubit.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+  
   await dotenv.load(fileName: ".env");
   final supabaseUrl = dotenv.get('VITE_SUPABASE_URL');
   final supabaseAnonKey = dotenv.get('VITE_SUPABASE_ANON_KEY');
@@ -20,6 +25,8 @@ void main() async {
 
   final prefs = await SharedPreferences.getInstance();
   final bool isFirstTime = prefs.getBool('isFirstTime') ?? true;
+
+  FlutterNativeSplash.remove();
 
   runApp(KayanApp(isFirstTime: isFirstTime));
 }
