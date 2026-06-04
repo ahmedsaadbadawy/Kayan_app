@@ -18,17 +18,20 @@ import 'package:kayan_app/features/properties/ui/property_details_screen.dart';
 
 abstract class AppRouter {
   static const kHomeScreen = '/HomeScreen';
-  static const kOnBoardingScreen = '/OnBoardingScreen';
+  static const kOnBoardingScreen = '/';
   static const kPropertiesScreen = '/PropertiesScreen';
   static const kFinishesScreen = '/FinishesScreen';
   static const kBlogsScreen = '/BlogScreen';
   static const kPropertyDetailsScreen = '/PropertyDetailsScreen';
   static const kFinishesDetailsScreen = '/FinishesDetailsScreen';
   static const kBlogDetailsScreen = '/BlogDetailsScreen';
-  static final router = GoRouter(
-    initialLocation: '/',
+  static GoRouter router(bool isFirstTime) => GoRouter(
+    initialLocation: isFirstTime ? kOnBoardingScreen : kHomeScreen,
     routes: <GoRoute>[
-      GoRoute(path: '/', builder: (context, state) => const OnBoardingScreen()),
+      GoRoute(
+        path: kOnBoardingScreen,
+        builder: (context, state) => const OnBoardingScreen(),
+      ),
       GoRoute(
         path: kHomeScreen,
         builder: (context, state) => const HomeScreen(),

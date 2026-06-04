@@ -6,6 +6,7 @@ import 'package:kayan_app/core/utils/app_router.dart';
 import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'package:kayan_app/core/utils/themes/theme_color.dart';
 import 'package:kayan_app/manager/locale_cubit/locale_cubit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'widgets/on_boarding_page_view.dart';
 import 'widgets/onboarding_dot_indicator.dart';
@@ -43,8 +44,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   ),
                   Spacer(),
                   SkipButton(
-                    onPressed: () {
-                      context.go(AppRouter.kHomeScreen);
+                    onPressed: () async {
+                      final prefs = await SharedPreferences.getInstance();
+                      await prefs.setBool('isFirstTime', false);
+                      if (context.mounted) context.go(AppRouter.kHomeScreen);
                     },
                   ),
                 ],
