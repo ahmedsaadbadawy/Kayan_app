@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:kayan_app/core/layout/my_appbar.dart';
-import 'package:kayan_app/core/utils/helpers/spaces.dart';
 import 'widgets/home_categories_section.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,7 +11,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(),
       body: SafeArea(
-        child: Padding(padding: myPadding, child: HomeCategoriesSection()),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          child: HomeCategoriesSection(),
+        ),
       ),
     );
   }
